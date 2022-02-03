@@ -1,16 +1,33 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import math as m
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Person:
+    def __init__(self, name, ht, wt):
+        self.name = name
+        self.heigth=ht
+        self.weight=wt
+
+    def get_name(self):
+        return self.name
+    def set_name(self, new_name):
+        self.name = new_name
+    def get_bmi(self):
+        bmi = self.weight // (self.heigth * self.heigth)
+        return  bmi
+
+    def wellcome_msg(self):
+        return f"wellcome {self.name} and your height is {self.heigth} and weigth {self.weight}"
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+a_person = Person('bitue', 6, 90)
+b_person = Person('farha', 5, 60)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(b_person.wellcome_msg())
+b_person.set_name('nazia')
+print(b_person.get_bmi())
+
+
+
+
+
+
